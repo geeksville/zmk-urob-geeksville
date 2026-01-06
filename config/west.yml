@@ -26,6 +26,8 @@ manifest:
       url-base: https://github.com/urob
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: geeksville
+      url-base: https://github.com/geeksville
 
   projects:
     - name: zmk
@@ -45,6 +47,12 @@ manifest:
       path: modules/zmk/tri-state
     - name: zmk-unicode
       path: modules/zmk/unicode
+
+    # Corne-J keyboard support
+    - name: corne-j-geeksville
+      remote: geeksville
+      revision: main
+      import: config/west.yml      
 
     # Only source necessary Zephyr modules. Remove this entire section to restore
     # the default (needed for less common hardware).
