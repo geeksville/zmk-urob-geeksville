@@ -4,8 +4,7 @@
         name,                                                    \
         &none LT                 &none        RT &none           \
         &none LM           &none &none &none  RM &none           \
-        &none LB &none           &none        RB &none           \  
-                                                                 \      
+        &none LB &none           &none        RB &none           \
         &none LH RH &none  )
 
 
