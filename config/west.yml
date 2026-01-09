@@ -52,7 +52,8 @@ manifest:
     - name: corne-j-geeksville
       remote: geeksville
       revision: main
-      import: config/west.yml      
+      import: config/west.yml 
+      path: modules/corne-j-geeksville    
 
     # Only source necessary Zephyr modules. Remove this entire section to restore
     # the default (needed for less common hardware).
