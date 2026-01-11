@@ -3,6 +3,11 @@
 Alas, devcontainers don't work well with nix.  So instead just follow the original instructions after making
 an Ubuntu based distrobox instance.  MAKE SURE TO ENABLE SYSTEMD in the selection gui.
 
+## TODO
+
+* Possibly add . to the nummode layer?  To allow typing 345.23 easily.
+
+## Build instructions
 Then add direnv to the shared ~/.bashrc (though I already did this)
 > echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
 
