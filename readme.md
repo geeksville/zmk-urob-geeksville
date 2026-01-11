@@ -220,6 +220,11 @@ long-presses. The exact implementation is tweaked so that `Ctrl` is silently
 absorbed in combination with `home` and `end` to avoid accidental document-wide
 operations (which are accessible via the dedicated `begin/end document keys`.)
 
+##### System layer
+
+Accessed by holding Fn + Shift thumb keys.  This layer provides rare system operations
+like bootloader entry, controller reset and bluetooth ID selection.
+
 ##### Swapper
 
 I am using [Nick Conway](https://github.com/nickconway)'s fantastic
