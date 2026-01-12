@@ -5,7 +5,22 @@ an Ubuntu based distrobox instance.  MAKE SURE TO ENABLE SYSTEMD in the selectio
 
 ## TODO
 
+* add soft-off support
 * Possibly add . to the nummode layer?  To allow typing 345.23 easily.
+* enable zmk studio layers
+* Make game layer
+
+## Game layer
+
+FIXME - do with zmk studio?
+```
+
+p    1    2 3 4 5
+tab  q    a w d r
+ctrl shft c s e f
+
+     m alt space
+```
 
 ## Build instructions
 Then add direnv to the shared ~/.bashrc (though I already did this)
