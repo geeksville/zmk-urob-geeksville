@@ -10,3 +10,30 @@
 
 #include "eyelash42-no-enc.h"
 #include "base.keymap"
+
+// Geeksville add game layer
+
+// FIXME replace this with a 'game' layout layer per geeksville/README.md
+// Refer to ZMK_LAYER macro in modules/zmk/helpers/include/zmk-helpers/helper.h and
+// ZMK documentation
+ZMK_LAYER(                                                   \
+    Game,                                                    \
+    &none LT                 &none        RT &none           \
+    &none LM           &none &none &none  RM &none           \
+    &none LB                 &none        RB &none           \
+    &kp LGUI LH RH &smart_mouse  )
+
+// Geeksville add zmk-studio support
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        extra1 {
+            status = "reserved";
+        };
+
+        extra2 {
+            status = "reserved";
+        };
+    };
+};

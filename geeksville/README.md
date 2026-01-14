@@ -6,20 +6,23 @@ an Ubuntu based distrobox instance.  MAKE SURE TO ENABLE SYSTEMD in the selectio
 ## TODO
 
 * Possibly add . to the nummode layer?  To allow typing 345.23 easily.
-* enable zmk studio layers
+* !enable zmk studio layers
 * turn on serial console emulation
 * Make game layer
 
 ## Game layer
 
-FIXME - do with zmk studio?
+This layer replaces the left 3x6 and the three thumb keys beneath it with a gaming layout.
 ```
 
-p    1    2 3 4 5
-tab  q    a w d r
-ctrl shft c s e f
+tab  1/6    2/7 3/8 4/9 5/0
+p    q      a   w   d   r
+ctrl m      c   s   e   f
 
-     m alt space
+     alt space shift
+
+Note: if shift is held then the 5 number keys (1-5) become 6 through 0.
+
 ```
 
 ## Build instructions

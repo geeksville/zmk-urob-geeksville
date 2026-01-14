@@ -51,11 +51,12 @@
   #define THUMBS LH2 LH1 LH0 RH0 RH1 RH2 // Thumbs on 36+ keys.
 #endif
 
-// geeksville hack require-prior-idle-ms was 150, but my typing speed is super slow still so assume 20 wpm and therefore 500
+// geeksville hack require-prior-idle-ms was 150, but my typing speed is super slow still so assume 20 wpm
+// but 500 was way to large in practice, so try 200
 #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS)                                 \
   ZMK_HOLD_TAP(NAME, bindings = <HOLD>, <TAP>; flavor = "balanced";            \
                tapping-term-ms = <280>; quick-tap-ms = <QUICK_TAP_MS>;         \
-               require-prior-idle-ms = <500>; hold-trigger-on-release;         \
+               require-prior-idle-ms = <200>; hold-trigger-on-release;         \
                hold-trigger-key-positions = <TRIGGER_POS>;)
 
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs.
@@ -269,20 +270,5 @@ ZMK_BASE_LAYER(Mouse,
                                               ___           ___         ,   U_WH_U        U_WH_D
 //                                          ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
 )
-
-// Geeksville add zmk-studio support
-/ {
-    keymap {
-        compatible = "zmk,keymap";
-
-        extra1 {
-            status = "reserved";
-        };
-
-        extra2 {
-            status = "reserved";
-        };
-    };
-};
 
 /* vim: set ft=c tw=146: */
