@@ -41,6 +41,46 @@ build expr *west_args:
         just _build_single "$board" "$shield" "$snippet" "$artifact" {{ west_args }}
     done
 
+# Shorthand to build my left eyelash corne
+build-eyelash:
+    just build eyelash_corne_left,nice_view,studio-rpc-usb-uart
+
+# Flash firmware to keyboard side (internal helper)
+_flash side:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    mount_point="/run/media/kevinh/NICENANO"
+    device="/dev/sda"
+    uf2_file="{{ out }}/nice_view-eyelash_corne_{{ side }}.uf2"
+    
+    if [[ ! -f "$uf2_file" ]]; then
+        echo "Error: $uf2_file not found. Build first." >&2
+        exit 1
+    fi
+    
+    # Mount if not already mounted
+    if ! mountpoint -q "$mount_point"; then
+        echo "Mounting $device to $mount_point..."
+        sudo mkdir -p "$mount_point"
+        sudo mount "$device" "$mount_point"
+    fi
+    
+    echo "Copying $uf2_file to $mount_point..."
+    sudo cp "$uf2_file" "$mount_point/zmk.uf2"
+    sync
+    
+    echo "Unmounting $mount_point..."
+    sudo umount "$mount_point" | true
+    echo "Done! {{ side }} keyboard flashed."
+
+# Flash left keyboard
+flash-left:
+    just _flash left
+
+# Flash right keyboard
+flash-right:
+    just _flash right
+
 # clear build cache and artifacts
 clean:
     rm -rf {{ build }} {{ out }}
