@@ -9,7 +9,7 @@
         &none LT                 &none        RT &to GAME        \
         &none LM           &none &none &none  RM &none           \
         &none LB                 &none        RB &none           \
-        &kp LGUI LH RH &smart_mouse  )
+        &none LH RH &smart_mouse  )
 
 
 #include "eyelash42-no-enc.h"
