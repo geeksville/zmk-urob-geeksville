@@ -20,6 +20,7 @@ include:
   # - board: glove80_rh
   - board: eyelash_corne_left
     shield: nice_view
+    snippet: studio-rpc-usb-uart
   - board: eyelash_corne_left
     shield: settings_reset
   - board: eyelash_corne_right

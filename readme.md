@@ -222,8 +222,9 @@ operations (which are accessible via the dedicated `begin/end document keys`.)
 
 ##### System layer
 
-Accessed by holding Fn + Shift thumb keys.  This layer provides rare system operations
-like bootloader entry, controller reset and bluetooth ID selection.
+Accessed by holding Fn + Nummode thumb keys.  Note you must press nummode first to prevent layer switching into the Fn layer.  
+This layer provides rare system operations like bootloader entry, ZMK Studio unlock, controller reset and 
+bluetooth ID selection.
 
 ##### Swapper
 
