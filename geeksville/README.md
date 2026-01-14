@@ -8,6 +8,7 @@ an Ubuntu based distrobox instance.  MAKE SURE TO ENABLE SYSTEMD in the selectio
 * add soft-off support
 * Possibly add . to the nummode layer?  To allow typing 345.23 easily.
 * enable zmk studio layers
+* turn on serial console emulation
 * Make game layer
 
 ## Game layer
