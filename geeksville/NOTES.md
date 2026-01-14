@@ -123,8 +123,11 @@ Put the most commonly used symbols on the home row and also put symbols that are
 
 ## typing practice
 
+https://gnusenpai.net/colemakclub/ (use this to learn homerow and a bit more, eventually transition to keybr once about 8 wpm)
 https://www.keybr.com/ (use colemakDH-matrix layout)
 https://monkeytype.com/ (gamified)
+
+How to learn typing: https://www.reddit.com/r/ErgoMechKeyboards/comments/xn6vys/where_to_learn_colemak_keyboard_layout/iptfg8t/
 
 ## touchpad
 
