@@ -58,6 +58,9 @@ _flash artifact:
     device="/dev/sda"
     uf2_file="{{ out }}/{{ artifact }}.uf2"
     
+    # Ensure unmount happens on exit, even if previous operations fail
+    trap 'if mountpoint -q "$mount_point" 2>/dev/null; then sudo umount "$mount_point" 2>/dev/null || true; fi' EXIT
+    
     if [[ ! -f "$uf2_file" ]]; then
         echo "Error: $uf2_file not found. Build first." >&2
         exit 1
@@ -74,17 +77,18 @@ _flash artifact:
     sudo cp "$uf2_file" "$mount_point/zmk.uf2"
     sync
     
-    echo "Unmounting $mount_point..."
-    sudo umount "$mount_point" | true
     echo "Done! {{ artifact }} flashed."
 
 # Flash left eyelash_corne keyboard
-flash-left:
+flash-eyelash-left:
     just _flash nice_view-eyelash_corne_left
 
 # Flash right eyelash_corne keyboard
-flash-right:
+flash-eyelash-right:
     just _flash nice_view-eyelash_corne_right
+
+flash-eyelash-reset:
+    just _flash settings_reset-eyelash_corne_left
 
 # Flash left toucan keyboard
 flash-toucan-left:

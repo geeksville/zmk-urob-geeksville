@@ -8,7 +8,8 @@ an Ubuntu based distrobox instance.  MAKE SURE TO ENABLE SYSTEMD in the selectio
 * Possibly add . to the nummode layer?  To allow typing 345.23 easily.
 * !enable zmk studio layers
 * turn on serial console emulation
-* Make game layer
+* !Make game layer
+* Someday use https://www.reddit.com/r/ErgoMechKeyboards/comments/1qc5729/zmk_local_build_script_build_your_firmware_locally/ to build?
 
 ## Game layer
 
@@ -16,8 +17,8 @@ This layer replaces the left 3x6 and the three thumb keys beneath it with a gami
 ```
 
 tab  1/6    2/7 3/8 4/9 5/0
-p    q      a   w   d   r
-ctrl m      c   s   e   f
+esc  q      a   w   d   r
+ctrl p      c   s   e   f
 
      alt space shift
 
