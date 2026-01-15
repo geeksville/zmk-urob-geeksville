@@ -1,0 +1,17 @@
+#define CONFIG_WIRELESS
+
+// 6th layer
+#define GAME 6 
+
+#define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH)     \
+    ZMK_42_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH, \
+        ___, ___, ___,                          \
+        &to GAME, ___, ___,                     \
+        ___, &smart_mouse                       \
+    )
+
+#include "zmk_42_layer.h"
+#include "zmk-helpers/key-labels/36.h"
+#include "base.keymap"
+#include "game_layer.h"
+#include "zmk_studio.h"

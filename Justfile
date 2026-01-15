@@ -47,8 +47,8 @@ build-eyelash:
 
 # Shorthand to build my left toucan
 build-toucan:
-    just build seeeduino_xiao_ble,toucan_left
-    just build seeeduino_xiao_ble,toucan_right
+    just build seeeduino_xiao_ble,toucan_left --pristine
+    just build seeeduino_xiao_ble,toucan_right --pristine
 
 # Flash firmware to keyboard (internal helper)
 _flash artifact:
