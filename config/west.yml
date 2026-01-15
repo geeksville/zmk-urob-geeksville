@@ -55,6 +55,13 @@ manifest:
       import: config/west.yml 
       path: modules/corne-j-geeksville    
 
+    # Toucan keyboard support
+    - name: zmk-keyboard-toucan
+      remote: geeksville
+      revision: main
+      import: config/west.yml 
+      path: modules/zmk-keyboard-toucan 
+      
     # Only source necessary Zephyr modules. Remove this entire section to restore
     # the default (needed for less common hardware).
     - name: zephyr

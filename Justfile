@@ -45,13 +45,18 @@ build expr *west_args:
 build-eyelash:
     just build eyelash_corne_left,nice_view,studio-rpc-usb-uart
 
-# Flash firmware to keyboard side (internal helper)
-_flash side:
+# Shorthand to build my left toucan
+build-toucan:
+    just build seeeduino_xiao_ble,toucan_left
+    just build seeeduino_xiao_ble,toucan_right
+
+# Flash firmware to keyboard (internal helper)
+_flash artifact:
     #!/usr/bin/env bash
     set -euo pipefail
     mount_point="/run/media/kevinh/NICENANO"
     device="/dev/sda"
-    uf2_file="{{ out }}/nice_view-eyelash_corne_{{ side }}.uf2"
+    uf2_file="{{ out }}/{{ artifact }}.uf2"
     
     if [[ ! -f "$uf2_file" ]]; then
         echo "Error: $uf2_file not found. Build first." >&2
@@ -71,15 +76,23 @@ _flash side:
     
     echo "Unmounting $mount_point..."
     sudo umount "$mount_point" | true
-    echo "Done! {{ side }} keyboard flashed."
+    echo "Done! {{ artifact }} flashed."
 
-# Flash left keyboard
+# Flash left eyelash_corne keyboard
 flash-left:
-    just _flash left
+    just _flash nice_view-eyelash_corne_left
 
-# Flash right keyboard
+# Flash right eyelash_corne keyboard
 flash-right:
-    just _flash right
+    just _flash nice_view-eyelash_corne_right
+
+# Flash left toucan keyboard
+flash-toucan-left:
+    just _flash toucan_left+rgbled_adapter+nice_view_gem-seeeduino_xiao_ble
+
+# Flash right toucan keyboard
+flash-toucan-right:
+    just _flash toucan_right+rgbled_adapter-seeeduino_xiao_ble
 
 # clear build cache and artifacts
 clean:
