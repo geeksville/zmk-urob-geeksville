@@ -20,6 +20,7 @@ ZMK_LEADER_SEQUENCE(de_oe,      &uc UC_DE_OE,         O)  // ö
 ZMK_LEADER_SEQUENCE(de_ue,      &uc UC_DE_UE,         U)  // ü
 ZMK_LEADER_SEQUENCE(de_eszett,  &uc UC_DE_SS,         S)  // ß
 
+#if 0 // geeksville is too dumb for this
 /* Greek letters */
 ZMK_LEADER_SEQUENCE(el_alpha,   &uc UC_EL_ALPHA,      E A)  // α
 ZMK_LEADER_SEQUENCE(el_beta,    &uc UC_EL_BETA,       E B)  // β
@@ -45,6 +46,7 @@ ZMK_LEADER_SEQUENCE(el_phi,     &uc UC_EL_PHI,        E F)  // ϕ
 ZMK_LEADER_SEQUENCE(el_chi,     &uc UC_EL_CHI,        E C)  // χ
 ZMK_LEADER_SEQUENCE(el_psi,     &uc UC_EL_PSI,        E Y)  // ψ
 ZMK_LEADER_SEQUENCE(el_omega,   &uc UC_EL_OMEGA,      E W)  // ω
+#endif
 
 // BLE and USB
 #ifdef CONFIG_WIRELESS
@@ -53,4 +55,6 @@ ZMK_LEADER_SEQUENCE(ble,        &out OUT_BLE,   B L E)
 #endif // CONFIG_WIRELESS
 ZMK_LEADER_SEQUENCE(reset,      &sys_reset,     R E S E T)
 ZMK_LEADER_SEQUENCE(boot,       &bootloader,    B O O T)
-
+#ifdef CONFIG_ZMK_STUDIO
+ZMK_LEADER_SEQUENCE(boot,       &bootloader,    Z M K)
+#endif
