@@ -1,22 +1,25 @@
+#define CONFIG_WIRELESS
 
-// Provides a 3x6 + 3 layout to make it easy to use those extra keys if you wish
+// 6th layer
+#define GAME 6 
 
-#ifndef ZMK_42_LAYER
 #define ZMK_42_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH, OLT, OLM, OLB, ORT, ORM, ORB, OLH, ORH)     \
     ZMK_LAYER(                                                   \
         name,                                                    \
-        OLT LT                       RT ORT               \
-        OLM LM                       RM ORM               \
-        OLB LB                       RB ORB               \
+        OLT LT                 &none        RT ORT               \
+        OLM LM           &none &none &none  RM ORM               \
+        OLB LB &none           &none        RB ORB               \
         OLH LH RH ORH  )
-#endif
 
-// Default urob layout if not specified otherwise
-#ifndef ZMK_BASE_LAYER
 #define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH)     \
     ZMK_42_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH, \
         ___, ___, ___,                          \
-        ___, ___, ___,                     \
+        &to GAME, ___, ___,                     \
         ___, &smart_mouse                       \
     )
-#endif
+
+#include "zmk_42_layer.h"
+#include "zmk-helpers/key-labels/eyelash42.h"
+#include "base.keymap"
+#include "game_layer.h"
+#include "zmk_studio.h"

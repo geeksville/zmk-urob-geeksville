@@ -41,14 +41,17 @@ build expr *west_args:
         just _build_single "$board" "$shield" "$snippet" "$artifact" {{ west_args }}
     done
 
-# Shorthand to build my left eyelash corne
-build-eyelash:
-    just build eyelash_corne_left,nice_view,studio-rpc-usb-uart
+# Shorthand to build my eyelash corne
+build-eyelash *args:
+    # just build eyelash_corne_left,nice_view,studio-rpc-usb-uart {{ args }}
+    just build nice_nano_v2,eyeslash_corne_central_dongle {{ args }}
+    just build nice_nano_v2,eyeslash_corne_peripheral_left {{ args }}
+    just build nice_nano_v2,eyeslash_corne_peripheral_right {{ args }}
 
 # Shorthand to build my left toucan
-build-toucan:
-    just build seeeduino_xiao_ble,toucan_left --pristine
-    just build seeeduino_xiao_ble,toucan_right --pristine
+build-toucan *args:
+    just build seeeduino_xiao_ble,toucan_left {{ args }}
+    just build seeeduino_xiao_ble,toucan_right {{ args }}
 
 # Flash firmware to keyboard (internal helper)
 _flash artifact:
@@ -79,13 +82,19 @@ _flash artifact:
     
     echo "Done! {{ artifact }} flashed."
 
+flash-eyelash-dongle:
+    just _flash eyeslash_corne_central_dongle_oled
+    
 # Flash left eyelash_corne keyboard
 flash-eyelash-left:
-    just _flash nice_view-eyelash_corne_left
+    # just _flash nice_view-eyelash_corne_left
+    just _flash eyeslash_corne_peripheral_left+nice_view_custom-nice_nano_v2
 
 # Flash right eyelash_corne keyboard
 flash-eyelash-right:
-    just _flash nice_view-eyelash_corne_right
+    # Now using the dongle version
+    # just _flash nice_view-eyelash_corne_right
+    just _flash eyeslash_corne_peripheral_right+nice_view_custom-nice_nano_v2
 
 flash-eyelash-reset:
     just _flash settings_reset-eyelash_corne_left

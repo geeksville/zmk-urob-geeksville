@@ -8,6 +8,8 @@ My typing speed is about 50 wpm on regular keyboard.
 * GREAT hardware build guide: https://medium.com/@burgessj247/building-your-keyboard-5d59382b5613
 
 * Use this board config: https://github.com/geeksville/corne-j-geeksville from mfg
+* external dongle config for my corne keyboard is here: https://github.com/a741725193/zmk-corne-dongle?tab=readme-ov-file
+
 * But then import it as a module into the miryoku per https://github.com/a741725193/zmk-new_corne/blob/main/README_EN.md
 * Possibly by using the "outboard" feature: https://github.com/manna-harbour/miryoku_zmk?tab=readme-ov-file#supported-keyboards
 * Use a config similar to this per the miryoku docs: https://github.com/manna-harbour/miryoku_zmk/blob/master/config/corneish_zen.keymap (a 42 key layout)

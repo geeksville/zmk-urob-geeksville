@@ -48,17 +48,24 @@ manifest:
     - name: zmk-unicode
       path: modules/zmk/unicode
 
-    # Corne-J keyboard support
+    # Corne-J (eyelash_corne) keyboard support
     - name: corne-j-geeksville
       remote: geeksville
       revision: main
       import: config/west.yml 
       path: modules/corne-j-geeksville    
 
+    # My corne (eyeslash_corne) but built as external dongle + left & right peripherals 
+    - name: zmk-corne-dongle
+      remote: geeksville
+      revision: main
+      import: config/west.yml 
+      path: modules/zmk-corne-dongle
+
     # Toucan keyboard support
     - name: zmk-keyboard-toucan
       remote: geeksville
-      revision: main
+      revision: dev
       import: config/west.yml 
       path: modules/zmk-keyboard-toucan 
       
