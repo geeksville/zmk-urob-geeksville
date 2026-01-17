@@ -14,6 +14,8 @@ an Ubuntu based distrobox instance.  MAKE SURE TO ENABLE SYSTEMD in the selectio
 ## Game layer
 
 This layer replaces the left 3x6 and the three thumb keys beneath it with a gaming layout.
+
+NOTE: THIS LAYOUT IS STALE - See game_layer.h instead
 ```
 
 tab  1/6    2/7 3/8 4/9 5/0
