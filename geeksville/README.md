@@ -18,7 +18,7 @@ This layer replaces the left 3x6 and the three thumb keys beneath it with a gami
 
 tab  1/6    2/7 3/8 4/9 5/0
 esc  q      a   w   d   r
-ctrl p      c   s   e   f
+ctrl m      c   s   e   f
 
      alt space shift
 
