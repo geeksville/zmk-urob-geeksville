@@ -8,3 +8,5 @@ zmk
 draw/base.yaml
 zmk-rgbled-widget
 cirque-input-module
+zmk-dongle-display
+hammerbeam-slideshow
