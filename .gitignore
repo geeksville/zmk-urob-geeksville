@@ -6,3 +6,5 @@ firmware
 zephyr
 zmk
 draw/base.yaml
+zmk-rgbled-widget
+cirque-input-module
