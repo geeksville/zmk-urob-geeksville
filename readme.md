@@ -199,6 +199,9 @@ Similarly to Numword, I have a smart-mouse layer (activated by comboing
 and mouse-movements, and replaces the right thumbs with mouse buttons. Pressing
 any other key automatically deactivates the layer.
 
+geeksville: on my 42 key layout the outer right thumb enters mouse mode, the outer 
+left thumb is LGUI (implicitly deactivating mouse mode).
+
 ##### Magic Repeat/Shift/Capsword
 
 My right thumb triggers three variations of shift as well as repeat: Tapping
