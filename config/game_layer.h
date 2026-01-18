@@ -20,5 +20,5 @@ ZMK_42_LAYER(Game,
            &kp SPACE &kp LSHFT,          ___    ___  ,
 //              ╰──────┴──────┴         ╰──────┴──────┴
 // Outer keys:  OLT        OLM        OLB       ORT      ORM  ORB         OLH       ORH
-              &kp TAB,   &kp ESC, &kp LCTRL,  &to DEF,   ___,  ___,      &kp LALT,  &smart_mouse
+              &kp ESC, &kp TAB,   &kp LCTRL,  &to DEF,   ___,  ___,      &kp LALT,  &smart_mouse
 )
