@@ -15,7 +15,7 @@
     ZMK_42_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH, \
         ___, ___, ___,                          \
         &to GAME, ___, ___,                     \
-        LGUI, &smart_mouse                       \
+        &kp LGUI, &smart_mouse                       \
     )
 
 #include "zmk_42_layer.h"
