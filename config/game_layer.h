@@ -49,6 +49,8 @@ SIMPLE_MORPH(k_left, SFT, &kp G, &kp LEFT)
 SIMPLE_MORPH(k_right, SFT, &kp J, &kp RIGHT)
 SIMPLE_MORPH(k_comma, SFT, &kp Y, &kp COMMA)
 SIMPLE_MORPH(k_dot, SFT, &kp I, &kp DOT)
+SIMPLE_MORPH(k_minus, SFT, &kp B, &kp MINUS)
+SIMPLE_MORPH(k_equal, SFT, &kp M, &kp EQUAL)
 
 ZMK_42_LAYER(Game,
 //╭──────┬──────┬──────┬──────┬──────╮              ╭──────┬──────┬──────┬──────┬──────╮
@@ -56,7 +58,7 @@ ZMK_42_LAYER(Game,
 //├──────┼──────┼──────┼──────┼──────┤              ├──────┼──────┼──────┼──────┼──────┤
    &k_z_k &k_q_j  &k_w_h &k_e_g &k_r_f,              &kp F &k_left &k_down &k_right &kp K,
 //├──────┼──────┼──────┼──────┼──────┤              ├──────┼──────┼──────┼──────┼──────┤
-    &kp X &k_a_m  &k_s_n &k_d_b &k_c_v,              &kp V &kp B  &kp N   &kp M  &kp BSPC,
+    &kp X &k_a_m  &k_s_n &k_d_b &k_c_v,              &kp V &k_minus &kp N  &k_equal &kp BSPC,
 //╰──────┴──────┼──────┼──────┼──────┤              ├──────┼──────┼──────┼──────┴──────╯
            &kp SPACE &kp LSHFT,                        &mkp LCLK &mkp RCLK,
 //              ╰──────┴──────┴                       ╰──────┴──────┴
