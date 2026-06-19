@@ -33,6 +33,7 @@
               pkgs.gcc
               pkgs.ninja
 
+              pkgs.gh
               pkgs.just
               pkgs.yq # Make sure yq resolves to python-yq.
 
