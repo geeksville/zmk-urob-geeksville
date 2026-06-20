@@ -49,6 +49,7 @@ include:
   - board: seeeduino_xiao_ble
     shield: toucan_right rgbled_adapter
     #snippet: zmk-usb-logging
-    #cmake-args: -DCONFIG_INPUT_LOG_LEVEL_DBG=y 
+    # hmm - cmake args seems to be ignored, add to the .config file systead
+    # cmake-args: -DCONFIG_INPUT_LOG_LEVEL_DBG=y -DCONFIG_LOG_PROCESS_THREAD_STARTUP_DELAY_MS=5000
   - board: seeeduino_xiao_ble
     shield: settings_reset
