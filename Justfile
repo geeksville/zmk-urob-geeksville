@@ -67,7 +67,6 @@ _flash artifact:
     #!/usr/bin/env bash
     set -euo pipefail
     mount_point="/run/media/kevinh/NICENANO"
-    device="/dev/sda"
     uf2_file="{{ out }}/{{ artifact }}.uf2"
     
     # Ensure unmount happens on exit, even if previous operations fail
@@ -80,6 +79,12 @@ _flash artifact:
     
     # Mount if not already mounted
     if ! mountpoint -q "$mount_point"; then
+        # Auto-detect the device by its FAT label
+        device=$(lsblk -o PATH,LABEL -rn | awk '$2=="XIAO-BOOT"{print $1}' | head -1)
+        if [[ -z "$device" ]]; then
+            echo "Error: could not find a device with label NICENANO. Is the keyboard in bootloader mode?" >&2
+            exit 1
+        fi
         echo "Mounting $device to $mount_point..."
         sudo mkdir -p "$mount_point"
         sudo mount "$device" "$mount_point"
