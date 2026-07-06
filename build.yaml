@@ -23,10 +23,15 @@ include:
   - board: eyelash_corne_left
     shield: nice_view
     snippet: studio-rpc-usb-uart
-  - board: eyelash_corne_left
-    shield: settings_reset
+  # I don't think I need two versions of the reset load
+  # - board: eyelash_corne_left
+  #   shield: settings_reset
   - board: eyelash_corne_right
     shield: nice_view
+
+  - board: seeeduino_xiao_ble
+    shield: settings_reset
+    artifact-name: settings_reset
 
   - board: nice_nano_v2
     shield: eyeslash_corne_central_dongle dongle_display
@@ -42,14 +47,21 @@ include:
     shield: toucan_left rgbled_adapter nice_view_gem
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
+    artifact-name: toucan_left
     # Turn off studio-rpc-usb-uart for now
     # snippet: zmk-usb-logging
     # geeksville: turn off studio for now -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
     # cmake-args:  -DCONFIG_ZMK_LOG_LEVEL=4
   - board: seeeduino_xiao_ble
     shield: toucan_right rgbled_adapter
-    #snippet: zmk-usb-logging
+    snippet: zmk-usb-logging
+    artifact-name: toucan_right
     # hmm - cmake args seems to be ignored, add to the .config file systead
-    # cmake-args: -DCONFIG_INPUT_LOG_LEVEL_DBG=y -DCONFIG_LOG_PROCESS_THREAD_STARTUP_DELAY_MS=5000
-  - board: seeeduino_xiao_ble
-    shield: settings_reset
+    cmake-args: -DCONFIG_INPUT_LOG_LEVEL_DBG=y -DCONFIG_LOG_PROCESS_THREAD_STARTUP_DELAY_MS=5000
+
+  - board: nice_nano_v2
+    shield: crosses_left
+    artifact-name: crosses_54_left
+  - board: nice_nano_v2
+    shield: crosses_right
+    artifact-name: crosses_54_right

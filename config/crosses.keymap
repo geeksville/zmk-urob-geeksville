@@ -1,0 +1,25 @@
+#define CONFIG_WIRELESS
+
+// 6th layer
+#define GAME 6 
+
+#define ZMK_42_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH, OLT, OLM, OLB, ORT, ORM, ORB, OLH, ORH)     \
+    ZMK_LAYER(                                                   \
+        name,                                                    \
+        OLT LT                 &none        RT ORT               \
+        OLM LM           &none &none &none  RM ORM               \
+        OLB LB &none           &none        RB ORB               \
+        OLH LH RH ORH  )
+
+#define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH)     \
+    ZMK_42_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH, \
+        ___, ___, ___,                          \
+        ___, ___, &to GAME,                     \
+        &kp LGUI, &smart_mouse                       \
+    )
+
+#include "zmk_42_layer.h"
+#include "crosses.h"
+#include "base.keymap"
+#include "game_layer.h"
+#include "zmk_studio.h"

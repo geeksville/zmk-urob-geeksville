@@ -30,7 +30,12 @@ manifest:
       url-base: https://github.com/geeksville
     - name: beekeeb
       url-base: https://github.com/beekeeb
-
+    - name: zzeneg
+      url-base: https://github.com/zzeneg
+    - name: Good-Great-Grand-Wonderful
+      url-base: https://github.com/Good-Great-Grand-Wonderful
+    - name: HeeTuic  
+      url-base: https://github.com/HeeTuic 
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -70,6 +75,25 @@ manifest:
       revision: main
       import: config/west.yml 
       path: modules/zmk-keyboard-toucan2
+
+    # underdongle support
+    - name: zmk-raw-hid
+      remote: zzeneg
+      revision: main
+      path: modules/zmk-raw-hid
+    - name: zmk-nice-view-hid
+      remote: zzeneg
+      revision: main
+      path: modules/zmk-nice-view-hid
+    - name: zmk-component-underdongle
+      remote: zzeneg
+      revision: main
+      path: modules/zmk-component-underdongle
+
+    - name: cb-zmk-keebs
+      remote: HeeTuic
+      revision: zephyr-4.1
+      import: config/west.yml
 
     # add layer info to BLE packets for app companion  
     #- manifest:

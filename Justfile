@@ -48,6 +48,11 @@ build-eyelash *args:
     just build nice_nano_v2,eyeslash_corne_peripheral_left {{ args }}
     just build nice_nano_v2,eyeslash_corne_peripheral_right {{ args }}
 
+# Shorthand to build my crosses
+build-crosses *args:
+    just build nice_nano_v2,crosses_left {{ args }}
+    just build nice_nano_v2,crosses_right {{ args }}
+
 # Shorthand to build my toucan
 build-toucan side="both" *args:
     @just _build-toucan-{{ side }} {{ args }}
@@ -80,9 +85,9 @@ _flash artifact:
     # Mount if not already mounted
     if ! mountpoint -q "$mount_point"; then
         # Auto-detect the device by its FAT label
-        device=$(lsblk -o PATH,LABEL -rn | awk '$2=="XIAO-BOOT"{print $1}' | head -1)
+        device=$(lsblk -o PATH,LABEL -rn | awk '$2=="XIAO-BOOT" || $2=="NICENANO"{print $1}' | head -1)
         if [[ -z "$device" ]]; then
-            echo "Error: could not find a device with label NICENANO. Is the keyboard in bootloader mode?" >&2
+            echo "Error: could not find a device with label XIAO-BOOT or NICENANO. Is the keyboard in bootloader mode?" >&2
             exit 1
         fi
         echo "Mounting $device to $mount_point..."
@@ -110,19 +115,24 @@ flash-eyelash-right:
     # just _flash nice_view-eyelash_corne_right
     just _flash eyeslash_corne_peripheral_right+nice_view_custom-nice_nano_v2
 
-flash-eyelash-reset:
-    just _flash settings_reset-eyelash_corne_left
+# Flash left crosses keyboard
+flash-crosses-left:
+    just _flash crosses_54_left
+
+# Flash right crosses keyboard
+flash-crosses-right:
+    just _flash crosses_54_right
 
 # Flash left toucan keyboard
 flash-toucan-left:
-    just _flash toucan_left+rgbled_adapter+nice_view_gem-seeeduino_xiao_ble
+    just _flash toucan_left
 
 # Flash right toucan keyboard
 flash-toucan-right:
-    just _flash toucan_right+rgbled_adapter-seeeduino_xiao_ble
+    just _flash toucan_right
 
-flash-toucan-reset:
-    just _flash settings_reset-seeeduino_xiao_ble
+flash-reset:
+    just _flash settings_reset
 
 # clear build cache and artifacts
 clean:
