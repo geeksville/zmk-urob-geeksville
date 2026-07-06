@@ -37,12 +37,12 @@
 #define RT4  22
 #define RT5  23
 
-#define LM0 24  // left-middle row
-#define LM1 25
-#define LM2 26
-#define LM3 27
-#define LM4 28
-#define LM5 29
+#define LM0 29  // left-middle row
+#define LM1 28
+#define LM2 27
+#define LM3 26
+#define LM4 25
+#define LM5 24
 
 #define RM0 30  // right-middle row
 #define RM1 31
@@ -51,12 +51,12 @@
 #define RM4 34
 #define RM5 35
 
-#define LB0 36  // left-bottom row
-#define LB1 37
-#define LB2 38
-#define LB3 39
-#define LB4 40
-#define LB5 41
+#define LB0 41  // left-bottom row
+#define LB1 40  // left-bottom row
+#define LB2 39
+#define LB3 38
+#define LB4 37
+#define LB5 36
 
 #define RB0 42  // right-bottom row
 #define RB1 43
