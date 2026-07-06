@@ -29,7 +29,7 @@ include:
   - board: eyelash_corne_right
     shield: nice_view
 
-  - board: seeeduino_xiao_ble
+  - board: nice_nano_v2
     shield: settings_reset
     artifact-name: settings_reset
 
@@ -59,6 +59,10 @@ include:
     # hmm - cmake args seems to be ignored, add to the .config file systead
     cmake-args: -DCONFIG_INPUT_LOG_LEVEL_DBG=y -DCONFIG_LOG_PROCESS_THREAD_STARTUP_DELAY_MS=5000
 
+  - board: seeeduino_xiao_ble
+    shield: crosses_dongle underdongle_adapter raw_hid_adapter
+    snippet: studio-rpc-usb-uart
+    artifact-name: crosses_dongle
   - board: nice_nano_v2
     shield: crosses_left
     artifact-name: crosses_54_left

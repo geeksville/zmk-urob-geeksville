@@ -50,8 +50,12 @@ build-eyelash *args:
 
 # Shorthand to build my crosses
 build-crosses *args:
-    just build nice_nano_v2,crosses_left {{ args }}
-    just build nice_nano_v2,crosses_right {{ args }}
+    just build seeeduino_xiao_ble,crosses_dongle {{ args }}
+    #just build nice_nano_v2,crosses_left {{ args }}
+    #just build nice_nano_v2,crosses_right {{ args }}
+
+build-reset *args:
+    just build nice_nano_v2,settings_reset {{ args }}
 
 # Shorthand to build my toucan
 build-toucan side="both" *args:
@@ -85,7 +89,7 @@ _flash artifact:
     # Mount if not already mounted
     if ! mountpoint -q "$mount_point"; then
         # Auto-detect the device by its FAT label
-        device=$(lsblk -o PATH,LABEL -rn | awk '$2=="XIAO-BOOT" || $2=="NICENANO"{print $1}' | head -1)
+        device=$(lsblk -o PATH,LABEL -rn | awk '$2~/^XIAO/ || $2=="NICENANO"{print $1}' | head -1)
         if [[ -z "$device" ]]; then
             echo "Error: could not find a device with label XIAO-BOOT or NICENANO. Is the keyboard in bootloader mode?" >&2
             exit 1
@@ -114,6 +118,10 @@ flash-eyelash-right:
     # Now using the dongle version
     # just _flash nice_view-eyelash_corne_right
     just _flash eyeslash_corne_peripheral_right+nice_view_custom-nice_nano_v2
+
+# Flash crosses dongle (central)
+flash-crosses-dongle:
+    just _flash crosses_dongle
 
 # Flash left crosses keyboard
 flash-crosses-left:
