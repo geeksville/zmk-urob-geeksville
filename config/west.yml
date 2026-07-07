@@ -90,9 +90,9 @@ manifest:
       revision: main
       path: modules/zmk-component-underdongle
 
-    - name: cb-zmk-keebs
-      remote: HeeTuic
-      revision: zephyr-4.1
+    - name: gggw-zmk-keebs
+      remote: geeksville
+      revision: feat-dongle
       import: config/west.yml
 
     # add layer info to BLE packets for app companion  
